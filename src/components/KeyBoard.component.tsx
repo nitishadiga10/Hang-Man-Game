@@ -1,6 +1,3 @@
-import { useState } from "react";
-
-
 export const KeyBoard = (
     {handleKeyBoardClick, typedLetters, latestWord,result}:{handleKeyBoardClick:any, typedLetters:string[],latestWord:string[],
         result:string

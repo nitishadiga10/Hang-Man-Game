@@ -10,7 +10,7 @@ const getTheWord = () => {
 
 export const HomePage = () => {
 
-    const [latestWord, setLatestWord] = useState<string[]>(getTheWord().split(""));
+    const [latestWord] = useState<string[]>(getTheWord().split(""));
     const [wrongAttempts, setWrongAttempts] = useState<number>(0);
     const [typedLetters, setTypedLetters] = useState<string[]>([]);
     const [result, setResult] = useState<string>("");
