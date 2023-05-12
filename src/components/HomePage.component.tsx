@@ -10,13 +10,13 @@ const getTheWord = () => {
 
 export const HomePage = () => {
 
-    const [latestWord] = useState<string[]>(getTheWord().split(""));
+    const [latestWord] = useState<string[]>(getTheWord().toUpperCase().split(""));
     const [wrongAttempts, setWrongAttempts] = useState<number>(0);
     const [typedLetters, setTypedLetters] = useState<string[]>([]);
     const [result, setResult] = useState<string>("");
 
     useEffect(() => {
-    let wrongLetters = 0;
+        let wrongLetters = 0;
         typedLetters.forEach(letter => {
             if (!latestWord.includes(letter)) wrongLetters += 1;
         });
@@ -38,23 +38,22 @@ export const HomePage = () => {
     }
 
     return <div className="flex-col flex  justify-center items-center h-full w-full gap-8">
-        {!result && <h1 className='mt-5 font-bold text-[30px]'>
-            Hello There ! Guess the word and Save the Man!</h1>}
-            {!!result && <div className='flex flex-row justify-center items-center mt-5'>
-            <h1 className='font-bold text-[30px]'>{result === "WON" ? "You Saved the Man ! Bravo !!! " : 
-            "You Hanged the Man, Oops!!!!"}</h1>
-            <button className='px-5 bg-sky-500 rounded ml-5 h-[40px] text-xl
-            hover:bg-white hover:border-black hover:border-2' onClick={handleRefresh}
-            >Play Again !</button>
-            </div>}
-            {}
-        <Hangman wrongAttempts = {wrongAttempts}/>
-        <InputText latestWord={latestWord} typedLetters={typedLetters} result = {result} />
-        <KeyBoard 
-        handleKeyBoardClick={handleKeyBoardClick} 
-        typedLetters={typedLetters} 
-        latestWord={latestWord} 
-        result = {result}
+        {!result && <h1 className='mt-5 font-bold text-[30px]'>Hello There ! Guess the word and Save the Man!</h1>}
+        {!!result && <div className='flex flex-row justify-center items-center mt-5'>
+            <h1 className='font-bold text-[30px]'>{result === "WON" ? "You Saved the Man ! Bravo !!! " : "You Hanged the Man, Oops!!!!"}</h1>
+            <button
+                className='px-5 bg-sky-500 rounded ml-5 h-[40px] text-xl border-black border-2 hover:bg-white hover:border-black hover:border-2'
+                onClick={handleRefresh}
+            >Play Again !
+            </button>
+        </div>}
+        <Hangman wrongAttempts={wrongAttempts} />
+        <InputText latestWord={latestWord} typedLetters={typedLetters} result={result} />
+        <KeyBoard
+            handleKeyBoardClick={handleKeyBoardClick}
+            typedLetters={typedLetters}
+            latestWord={latestWord}
+            result={result}
         />
     </div>
 }
