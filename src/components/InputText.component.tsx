@@ -7,7 +7,7 @@ export const InputText = ({ latestWord, typedLetters, result }: { latestWord: st
                     return <div aria-hidden="true"  key={index}
                         className={`
                         flex justify-center items-center border-b-4 w-8 sm:w-20 border-black aspect-square uppercase 
-                        text-xl sm:text-5xl
+                        text-xl sm:text-5xl font-medium
                         `}
                     ><span
                         className={
