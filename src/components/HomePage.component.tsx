@@ -38,9 +38,9 @@ export const HomePage = () => {
     }
 
     return <div className="flex-col flex  justify-center items-center gap-8 my-5 mx-auto max-w-[80vw] text-center">
-        {!result && <h1 className='font-bold md:text-[30px] sm:text-[10px]'>Hello There ! Guess the word and Save the Man!</h1>}
+        {!result && <h1 className='font-bold text-[15px] sm:text-[30px]'>Hello There ! Guess the word and Save the Man!</h1>}
         {!!result && <div className='flex flex-row justify-center items-center'>
-            <h1 className='font-bold md:text-[30px] sm:text-[10px] '>{result === "WON" ? "You Saved the Man ! Bravo !!! " : "You Hanged the Man, Oops!!!!"}</h1>
+            <h1 className='font-bold ext-[15px] sm:text-[30px] '>{result === "WON" ? "You Saved the Man ! Bravo !!! " : "You Hanged the Man, Oops!!!!"}</h1>
             <button
                 className=' bg-sky-500 rounded ml-5 h-[40px] w-[120px] font-bold
                 border-black border-2 hover:bg-white hover:border-black hover:border-2'
