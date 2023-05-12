@@ -37,9 +37,9 @@ export const HomePage = () => {
         window.location.reload();
     }
 
-    return <div className="flex-col flex  justify-center items-center h-full w-full gap-8">
-        {!result && <h1 className='mt-5 font-bold text-[30px]'>Hello There ! Guess the word and Save the Man!</h1>}
-        {!!result && <div className='flex flex-row justify-center items-center mt-5'>
+    return <div className="flex-col flex  justify-center items-center h-screen w-screen gap-8 m-5">
+        {!result && <h1 className='font-bold text-[30px]'>Hello There ! Guess the word and Save the Man!</h1>}
+        {!!result && <div className='flex flex-row justify-center items-center'>
             <h1 className='font-bold text-[30px]'>{result === "WON" ? "You Saved the Man ! Bravo !!! " : "You Hanged the Man, Oops!!!!"}</h1>
             <button
                 className='px-5 bg-sky-500 rounded ml-5 h-[40px] text-xl border-black border-2 hover:bg-white hover:border-black hover:border-2'

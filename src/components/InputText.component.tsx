@@ -4,12 +4,18 @@ export const InputText = ({ latestWord, typedLetters, result }: { latestWord: st
             {
                 latestWord.map((el, index) => {
                     const correctGuess: boolean = typedLetters.includes(el);
-                    return <div key={index}
-                        className={`flex justify-center items-center border-b-4 w-20 text-5xl bg-white text-white
-                        ${correctGuess && "!text-black"} 
-                        ${!correctGuess && result === "LOST" && "!text-[red]"} 
-                        border-black aspect-square uppercase`}
-                    >{el}</div>
+                    return <div aria-hidden="true"  key={index}
+                        className={`
+                        flex justify-center items-center border-b-4 w-20 border-black aspect-square uppercase text-5xl
+                        `}
+                    ><span
+                        className={
+                            `invisible
+                            ${correctGuess && "!visible"} 
+                            ${!correctGuess && result === "LOST" && "!text-[red] !visible"}
+                            `
+                        }
+                    >{el}</span></div>
                 })
             }
         </div>
