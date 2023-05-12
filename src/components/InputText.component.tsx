@@ -6,7 +6,7 @@ export const InputText = ({ latestWord, typedLetters, result }: { latestWord: st
                     const correctGuess: boolean = typedLetters.includes(el);
                     return <div key={index}
                         className={`flex justify-center items-center border-b-4 w-20 text-5xl bg-white text-white
-                        ${correctGuess && "text-black"} 
+                        ${correctGuess && "!text-black"} 
                         ${!correctGuess && result === "LOST" && "!text-[red]"} 
                         border-black aspect-square uppercase`}
                     >{el}</div>
